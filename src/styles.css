@@ -1,0 +1,64 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+* {
+  background-color: rgb(246, 236, 248);
+  margin: 25;
+  padding: 25;
+  box-sizing: border-box;
+}
+
+button {
+  font-size: x-small;
+}
+
+/* label {
+  display: flex;
+  justify-content: center;
+} */
+
+/* .submit {
+  display: flex;
+  justify-content: center;
+} */
+
+.card-header {
+  background-color: #6610f2;
+  color: white;
+}
+
+.card-body {
+  background-color: #adb5bd;
+}
+
+.card-title {
+  background-color: #adb5bd;
+}
+
+#site-title {
+  font-family: 'Cairo', sans-serif;
+  font-size: 75px;
+}
+
+:root {
+  --my-color: #fff;
+  /* can add more variables/styles here */
+}
+[data-theme='dark'] {
+  --my-color: #000;
+}
+[data-theme='pink'] {
+  --my-color: #ffabc8;
+}
+
+body {
+  background-color: var(--my-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --my-color: #252b30;
+  }
+}

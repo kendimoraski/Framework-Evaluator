@@ -1,0 +1,4 @@
+{
+  "prettier.semi": false,
+  "files.autoSave": "onFocusChange"
+}
