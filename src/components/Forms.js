@@ -1,5 +1,6 @@
 import React from 'react'
 import { useInput } from './hooks/input-hook'
+import { fetchOneFramework } from '../thunk'
 
 export default function Forms(props) {
   const {
@@ -18,6 +19,12 @@ export default function Forms(props) {
     alert(
       `Submitting Library Name ${libraryName} & Framework Name ${frameworkName}`
     )
+    // We actually call the functions with the libraryName and frameworkName here, and this gets lifted back to state in App
+    props.setLibraryName(libraryName)
+    props.setFrameworkName(frameworkName)
+    fetchOneFramework(`${libraryName}/${frameworkName}`).then(fetchedFrmwks => {
+      props.setApiData([...props.apiData, fetchedFrmwks])
+    })
     resetLibraryName()
     resetFrameworkName()
   }
