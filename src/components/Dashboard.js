@@ -1,20 +1,14 @@
 /* eslint-disable semi */
-import React, { useState, useEffect } from 'react'
-import fetchFrameworks from '../thunk'
+import React from 'react'
 
 // We eventually want these to be replaced by what the user inputs in the textarea and incorporate auto-suggest
-const FRAMEWORKS = ['facebook/react', 'angular/angular.js', 'emberjs/ember.js']
+// const FRAMEWORKS = ['facebook/react', 'angular/angular.js', 'emberjs/ember.js']
 
-function Dashboard() {
-  const [apiData, setApiData] = useState([])
+function Dashboard(props) {
   // const [ascending, setAscending] = useState(false);
   // const [descending, setDescending] = useState(false);
   // const [datapoint, setDatapoint] = useState('');
   // const { info } = props;
-
-  useEffect(() => {
-    fetchFrameworks(FRAMEWORKS).then(setApiData)
-  }, [])
 
   // if (ascending || descending) {
   //   info.sort((a, b) => (a[datapoint] < b[datapoint] ? -1 : 1));
@@ -31,7 +25,7 @@ function Dashboard() {
       </button>
       <table>
         <tbody>
-          {apiData.map(framework => (
+          {props.apiData.map(framework => (
             <React.Fragment key={framework.name}>
               <tr className='single-framework-row'>
                 <th scope='row'>
