@@ -16,9 +16,7 @@ export default function Forms(props) {
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    alert(
-      `Submitting Library Name ${libraryName} & Framework Name ${frameworkName}`
-    )
+    alert(`Submitting \nLibrary: ${libraryName} \nFramework: ${frameworkName}`)
     // We actually call the functions with the libraryName and frameworkName here, and this gets lifted back to state in App
     props.setLibraryName(libraryName)
     props.setFrameworkName(frameworkName)
@@ -39,7 +37,7 @@ export default function Forms(props) {
           placeholder='enter a library name'
         />
       </label>
-      <input className='submit' type='submit' value='Submit' />
+      {/* <input className='submit' type='submit' value='Submit' /> */}
       <span>
         <label>
           Framework Name:{' '}

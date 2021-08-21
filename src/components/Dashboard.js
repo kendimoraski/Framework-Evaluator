@@ -23,24 +23,34 @@ function Dashboard(props) {
       <button className='btn btn-primary rounded-full'>
         Click Me I'm the Table Header
       </button>
-      <table>
-        <tbody>
-          {props.apiData.map(framework => (
-            <React.Fragment key={framework.name}>
-              <tr className='single-framework-row'>
-                <th scope='row'>
-                  {' '}
-                  {framework.name[0].toUpperCase() +
-                    framework.name.slice(1)}{' '}
-                </th>
-                <td> {framework.forks} </td>
-                <td> {framework.stargazers} </td>
-                <td> {framework.openIssues} </td>
-              </tr>
-            </React.Fragment>
-          ))}
-        </tbody>
-      </table>
+      <div className='overflow-x-auto'>
+        <table className='table w-full'>
+          <thead>
+            <tr>
+              <th>Framework</th>
+              <th>Forks</th>
+              <th>Stargazers</th>
+              <th>Open Issues</th>
+            </tr>
+          </thead>
+          <tbody>
+            {props.apiData.map(framework => (
+              <React.Fragment key={framework.name}>
+                <tr className='hover'>
+                  <th scope='row'>
+                    {' '}
+                    {framework.name[0].toUpperCase() +
+                      framework.name.slice(1)}{' '}
+                  </th>
+                  <td> {framework.forks} </td>
+                  <td> {framework.stargazers} </td>
+                  <td> {framework.openIssues} </td>
+                </tr>
+              </React.Fragment>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }
