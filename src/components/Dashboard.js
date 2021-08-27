@@ -20,13 +20,10 @@ function Dashboard(props) {
 
   return (
     <div>
-      <button className='btn btn-primary rounded-full'>
-        Click Me I'm the Table Header
-      </button>
       <div className='overflow-x-auto'>
         <table className='table w-full'>
           <thead>
-            <tr>
+            <tr className='hover'>
               <th>Framework</th>
               <th>Forks</th>
               <th>Stargazers</th>
@@ -37,7 +34,7 @@ function Dashboard(props) {
             {props.apiData.map(framework => (
               <React.Fragment key={framework.name}>
                 <tr className='hover'>
-                  <th scope='row'>
+                  <th>
                     {' '}
                     {framework.name[0].toUpperCase() +
                       framework.name.slice(1)}{' '}

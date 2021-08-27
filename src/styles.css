@@ -1,17 +1,17 @@
-.App {
+.header {
   font-family: sans-serif;
   text-align: center;
 }
 
 * {
-  background-color: rgb(246, 236, 248);
-  margin: 25;
-  padding: 25;
+  margin: 35;
+  padding: 35;
   box-sizing: border-box;
 }
 
-button {
-  font-size: x-small;
+select {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px;
 }
 
 /* label {
@@ -42,20 +42,20 @@ button {
   font-size: 75px;
 }
 
-:root {
+/* :root {
   --my-color: #fff;
-  /* can add more variables/styles here */
+  /* can add more variables/styles here
 }
-[data-theme='dark'] {
+/* [data-theme='dark'] {
   --my-color: #000;
-}
-[data-theme='pink'] {
+} */
+/* [data-theme='pink'] {
   --my-color: #ffabc8;
-}
+} */
 
-body {
+/* body {
   background-color: var(--my-color);
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {

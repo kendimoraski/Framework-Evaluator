@@ -29,26 +29,33 @@ export default function Forms(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Library Name:{' '}
-        <input
-          type='text'
-          {...bindLibraryName}
-          placeholder='enter a library name'
-        />
-      </label>
-      {/* <input className='submit' type='submit' value='Submit' /> */}
-      <span>
-        <label>
-          Framework Name:{' '}
+      <div className='form-control'>
+        <label className='label'>
+          <span className='label-text'>Library Name:</span>
+        </label>
+        <div className='flex space-x-2'>
+          <input
+            type='text'
+            {...bindLibraryName}
+            placeholder='enter a library name'
+            className='w-full input input-primary input-bordered'
+          />
+        </div>
+        {/* <input className='submit' type='submit' value='Submit' /> */}
+        <label className='label'>
+          <span className='label-text'>Framework Name:</span>
+        </label>
+        <div className='flex space-x-2'>
+          {/* <input className='submit' type='submit' value='Submit' /> */}{' '}
           <input
             type='text'
             {...bindFrameworkName}
             placeholder='enter a framework name'
+            className='w-full input input-primary input-bordered'
           />
-        </label>
-        <input className='submit' type='submit' value='Submit' />
-      </span>
+          <button className='btn btn-primary'>go</button>
+        </div>
+      </div>
     </form>
   )
 }
