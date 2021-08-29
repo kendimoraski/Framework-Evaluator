@@ -1,5 +1,5 @@
 {
-  "name": "whatever",
+  "name": "framework-evaluator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,10 +10,20 @@
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^5.0.2",
     "chartist": "^0.11.4",
+    "connect-session-sequelize": "^7.1.1",
+    "cors": "^2.8.5",
     "daisyui": "^1.11.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.12",
+    "passport": "^0.4.1",
+    "pg": "^8.7.1",
+    "postgres": "^1.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "^4.0.3",
+    "sequelize": "^6.6.5",
     "theme-change": "^2.0.2",
     "web-vitals": "^1.1.2"
   },
@@ -21,7 +31,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start-backend": "nodemon server"
   },
   "eslintConfig": {
     "extends": [

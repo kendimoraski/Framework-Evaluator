@@ -20,3 +20,19 @@ export const fetchFrameworks = async frameworks => {
 }
 
 // export default { fetchOneFramework, fetchFrameworks }
+
+export const postFramework = (library, framework) => {
+  fetch('http://localhost:8080/api/searches', {
+    method: 'POST', // or 'PUT'
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ library, framework }),
+  })
+    .then(data => {
+      console.log('Success:', data)
+    })
+    .catch(error => {
+      console.error('Error:', error)
+    })
+}

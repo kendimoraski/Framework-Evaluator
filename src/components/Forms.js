@@ -1,6 +1,6 @@
 import React from 'react'
 import { useInput } from './hooks/input-hook'
-import { fetchOneFramework } from '../thunk'
+import { fetchOneFramework, postFramework } from '../thunk'
 
 export default function Forms(props) {
   const {
@@ -23,6 +23,7 @@ export default function Forms(props) {
     fetchOneFramework(`${libraryName}/${frameworkName}`).then(fetchedFrmwks => {
       props.setApiData([...props.apiData, fetchedFrmwks])
     })
+    postFramework(libraryName, frameworkName)
     resetLibraryName()
     resetFrameworkName()
   }

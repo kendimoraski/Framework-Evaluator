@@ -1,4 +1,5 @@
 {
   "prettier.semi": false,
-  "files.autoSave": "onFocusChange"
+  "files.autoSave": "onFocusChange",
+  "liveServer.settings.port": 5501
 }
