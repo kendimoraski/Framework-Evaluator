@@ -13,37 +13,19 @@ select {
   padding: 5px;
 }
 
+/* Using this to try to change the color of the text inside the select but it isn't working */
 option {
   color: #2a2e37;
 }
 
-/* label {
-  display: flex;
-  justify-content: center;
-} */
-
-/* .submit {
-  display: flex;
-  justify-content: center;
-} */
-
-/* .card-header {
-  background-color: #6610f2;
-  color: white;
+html {
+  /* font-size: 20px; */
 }
 
-.card-body {
-  background-color: #adb5bd;
-}
-
-.card-title {
-  background-color: #adb5bd;
-} */
-
-#site-title {
+/* #site-title {
   font-family: 'Cairo', sans-serif;
   font-size: 75px;
-}
+} */
 
 /* :root {
   --my-color: #fff;

@@ -1,5 +1,6 @@
 /* eslint-disable semi */
 import React from 'react'
+import Card from './Card'
 
 // We eventually want these to be replaced by what the user inputs in the textarea and incorporate auto-suggest
 // const FRAMEWORKS = ['facebook/react', 'angular/angular.js', 'emberjs/ember.js']
@@ -43,6 +44,11 @@ function Dashboard({ apiData }) {
             ))}
           </tbody>
         </table>
+      </div>
+      <Card title={'Most Forks'} />
+      <Card title={'Most Stars'} />
+      <div>
+        <Card title={'Least Open Issues'} />
       </div>
     </div>
   )

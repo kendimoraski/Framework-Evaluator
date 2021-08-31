@@ -1,10 +1,10 @@
 import React from 'react'
 
-export const Card = () => {
+const Card = ({ title }) => {
   return (
-    <div className='card lg:card-side bordered'>
+    <div className='card bordered'>
       <div className='card-body'>
-        <h2 className='title'>[put title of card here]</h2>
+        <h2 className='title'>{title}</h2>
         <p>[put text here]</p>
         <div className='card-actions'>
           <button className='btn btn-primary'>Get Started</button>
@@ -14,3 +14,5 @@ export const Card = () => {
     </div>
   )
 }
+
+export default Card
