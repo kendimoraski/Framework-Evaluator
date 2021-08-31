@@ -10,8 +10,11 @@
 }
 
 select {
-  background-color: rgba(255, 255, 255, 0.5);
   padding: 5px;
+}
+
+option {
+  color: #2a2e37;
 }
 
 /* label {
@@ -24,7 +27,7 @@ select {
   justify-content: center;
 } */
 
-.card-header {
+/* .card-header {
   background-color: #6610f2;
   color: white;
 }
@@ -35,7 +38,7 @@ select {
 
 .card-title {
   background-color: #adb5bd;
-}
+} */
 
 #site-title {
   font-family: 'Cairo', sans-serif;

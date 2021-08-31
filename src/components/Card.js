@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Card = () => {
+export const Card = () => {
   return (
     <div className='card lg:card-side bordered'>
       <div className='card-body'>
-        <h2 className='title'>No Images</h2>
+        <h2 className='title'>[put title of card here]</h2>
         <p>[put text here]</p>
         <div className='card-actions'>
           <button className='btn btn-primary'>Get Started</button>

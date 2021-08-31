@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './styles.css'
 import Dashboard from './components/Dashboard'
 import Forms from './components/Forms'
-import ThemeChange from './components/ThemeChange'
+import Navbar from './components/Navbar'
 
 export default function App() {
   // This is how we add state to the App component
@@ -13,9 +13,9 @@ export default function App() {
 
   return (
     <div>
-      <ThemeChange />
+      <Navbar />
       <div className='header'>
-        <h1 id='site-title'>Framework Evaluator</h1>
+        {/* <h1 id='site-title'>Framework Evaluator</h1> */}
       </div>
       <Forms
         // We pass the *functions* Forms

@@ -8,7 +8,11 @@ export default function ThemeChange() {
   }, [])
 
   return (
-    <select data-choose-theme>
+    <select
+      // Trying to figure out how to get the font color of the select to actually be legible on light-colored backgrounds
+      className='select select-bordered select-primary w-full max-w-xs'
+      data-choose-theme
+    >
       <option value=''>Theme</option>
       <option value='light'>Light</option>
       <option value='dark'>Dark</option>
