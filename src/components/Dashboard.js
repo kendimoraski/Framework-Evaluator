@@ -4,7 +4,7 @@ import React from 'react'
 // We eventually want these to be replaced by what the user inputs in the textarea and incorporate auto-suggest
 // const FRAMEWORKS = ['facebook/react', 'angular/angular.js', 'emberjs/ember.js']
 
-function Dashboard(props) {
+function Dashboard({ apiData }) {
   // const [ascending, setAscending] = useState(false);
   // const [descending, setDescending] = useState(false);
   // const [datapoint, setDatapoint] = useState('');
@@ -31,17 +31,13 @@ function Dashboard(props) {
             </tr>
           </thead>
           <tbody>
-            {props.apiData.map(framework => (
-              <React.Fragment key={framework.name}>
+            {apiData.map(({ name, forks, stargazers, openIssues }) => (
+              <React.Fragment key={name}>
                 <tr className='hover'>
-                  <th>
-                    {' '}
-                    {framework.name[0].toUpperCase() +
-                      framework.name.slice(1)}{' '}
-                  </th>
-                  <td> {framework.forks} </td>
-                  <td> {framework.stargazers} </td>
-                  <td> {framework.openIssues} </td>
+                  <th> {name[0].toUpperCase() + name.slice(1)} </th>
+                  <td> {forks} </td>
+                  <td> {stargazers} </td>
+                  <td> {openIssues} </td>
                 </tr>
               </React.Fragment>
             ))}
