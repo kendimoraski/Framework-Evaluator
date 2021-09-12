@@ -10,24 +10,28 @@ export default function App() {
   const [libraryName, setLibraryName] = useState()
   const [frameworkName, setFrameworkName] = useState()
   const [apiData, setApiData] = useState([])
+  // We set this to -1 because...
+  const [mostForks, setMostForks] = useState({ forks: -1 })
+  const [mostStars, setMostStars] = useState({ stars: -1 })
 
   return (
     <div>
       <Navbar />
-      <div className='header'>
-        {/* <h1 id='site-title'>Framework Evaluator</h1> */}
-      </div>
       <Forms
         // We pass the *functions* Forms
         setLibraryName={setLibraryName}
         setFrameworkName={setFrameworkName}
         setApiData={setApiData}
         apiData={apiData}
+        setMostForks={setMostForks}
+        mostForks={mostForks.forks}
       />
       <Dashboard
         libraryName={libraryName}
         frameworkName={frameworkName}
         apiData={apiData}
+        mostForksNumber={mostForks.forks}
+        mostForksName={mostForks.name}
       />
     </div>
   )

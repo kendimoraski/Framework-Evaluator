@@ -5,7 +5,7 @@ import Card from './Card'
 // We eventually want these to be replaced by what the user inputs in the textarea and incorporate auto-suggest
 // const FRAMEWORKS = ['facebook/react', 'angular/angular.js', 'emberjs/ember.js']
 
-function Dashboard({ apiData }) {
+function Dashboard({ apiData, mostForksNumber, mostForksName }) {
   // const [ascending, setAscending] = useState(false);
   // const [descending, setDescending] = useState(false);
   // const [datapoint, setDatapoint] = useState('');
@@ -21,31 +21,38 @@ function Dashboard({ apiData }) {
 
   return (
     <div>
-      <div className='overflow-x-auto'>
-        <table className='table w-full'>
-          <thead>
-            <tr className='hover'>
-              <th>Framework</th>
-              <th>Forks</th>
-              <th>Stargazers</th>
-              <th>Open Issues</th>
-            </tr>
-          </thead>
-          <tbody>
-            {apiData.map(({ name, forks, stargazers, openIssues }) => (
-              <React.Fragment key={name}>
-                <tr className='hover'>
-                  <th> {name[0].toUpperCase() + name.slice(1)} </th>
-                  <td> {forks} </td>
-                  <td> {stargazers} </td>
-                  <td> {openIssues} </td>
-                </tr>
-              </React.Fragment>
-            ))}
-          </tbody>
-        </table>
+      <div className='card bordered'>
+        <div className='overflow-x-auto'>
+          <table className='table w-full'>
+            <thead>
+              <tr className='hover'>
+                <th>Framework</th>
+                <th>Forks</th>
+                <th>Stargazers</th>
+                <th>Open Issues</th>
+              </tr>
+            </thead>
+            <tbody>
+              {apiData.map(({ name, forks, stargazers, openIssues }) => (
+                <React.Fragment key={name}>
+                  <tr className='hover'>
+                    <th> {name[0].toUpperCase() + name.slice(1)} </th>
+                    <td> {forks} </td>
+                    <td> {stargazers} </td>
+                    <td> {openIssues} </td>
+                  </tr>
+                </React.Fragment>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-      <Card title={'Most Forks'} />
+      {/* Currently this is just defaulting to the first value that's entered in the form */}
+      <Card
+        title={'Most Forks'}
+        name={mostForksName}
+        number={mostForksNumber}
+      />
       <Card title={'Most Stars'} />
       <div>
         <Card title={'Least Open Issues'} />

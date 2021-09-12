@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useInput } from './hooks/input-hook'
 import { fetchOneFramework, postFramework } from '../thunk'
 
@@ -20,13 +20,26 @@ export default function Forms(props) {
     // We actually call the functions with the libraryName and frameworkName here, and this gets lifted back to state in App
     props.setLibraryName(libraryName)
     props.setFrameworkName(frameworkName)
-    fetchOneFramework(`${libraryName}/${frameworkName}`).then(fetchedFrmwks => {
-      props.setApiData([...props.apiData, fetchedFrmwks])
-    })
+    fetchOneFramework(`${libraryName}/${frameworkName}`).then(
+      fetchedFramework => {
+        if (fetchedFramework.forks > props.mostForks) {
+          props.setMostForks({
+            name: fetchedFramework.name,
+            forks: fetchedFramework.forks,
+          })
+        }
+        props.setApiData([...props.apiData, fetchedFramework])
+      }
+    )
     postFramework(libraryName, frameworkName)
     resetLibraryName()
     resetFrameworkName()
   }
+
+  useEffect(
+    () => console.log('this is mostForks', props.mostForks),
+    [props.mostForks]
+  )
 
   return (
     <form onSubmit={handleSubmit}>
