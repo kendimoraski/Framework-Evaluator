@@ -28,6 +28,12 @@ export default function Forms(props) {
             forks: fetchedFramework.forks,
           })
         }
+        if (fetchedFramework.stargazers > props.mostStars) {
+          props.setMostStars({
+            name: fetchedFramework.name,
+            stars: fetchedFramework.stargazers,
+          })
+        }
         props.setApiData([...props.apiData, fetchedFramework])
       }
     )
@@ -38,6 +44,7 @@ export default function Forms(props) {
 
   useEffect(
     () => console.log('this is mostForks', props.mostForks),
+    // What is this for again?
     [props.mostForks]
   )
 
@@ -55,12 +62,10 @@ export default function Forms(props) {
             className='w-full input input-primary input-bordered'
           />
         </div>
-        {/* <input className='submit' type='submit' value='Submit' /> */}
         <label className='label'>
           <span className='label-text'>Framework Name:</span>
         </label>
         <div className='flex space-x-2'>
-          {/* <input className='submit' type='submit' value='Submit' /> */}{' '}
           <input
             type='text'
             {...bindFrameworkName}

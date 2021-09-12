@@ -5,7 +5,13 @@ import Card from './Card'
 // We eventually want these to be replaced by what the user inputs in the textarea and incorporate auto-suggest
 // const FRAMEWORKS = ['facebook/react', 'angular/angular.js', 'emberjs/ember.js']
 
-function Dashboard({ apiData, mostForksNumber, mostForksName }) {
+function Dashboard({
+  apiData,
+  mostForksNumber,
+  mostForksName,
+  mostStarsNumber,
+  mostStarsName,
+}) {
   // const [ascending, setAscending] = useState(false);
   // const [descending, setDescending] = useState(false);
   // const [datapoint, setDatapoint] = useState('');
@@ -53,7 +59,11 @@ function Dashboard({ apiData, mostForksNumber, mostForksName }) {
         name={mostForksName}
         number={mostForksNumber}
       />
-      <Card title={'Most Stars'} />
+      <Card
+        title={'Most Stars'}
+        name={mostStarsName}
+        number={mostStarsNumber}
+      />
       <div>
         <Card title={'Least Open Issues'} />
       </div>

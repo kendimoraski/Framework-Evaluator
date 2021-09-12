@@ -18,13 +18,15 @@ export default function App() {
     <div>
       <Navbar />
       <Forms
-        // We pass the *functions* Forms
+        // We pass the *functions* to Forms
         setLibraryName={setLibraryName}
         setFrameworkName={setFrameworkName}
         setApiData={setApiData}
         apiData={apiData}
         setMostForks={setMostForks}
         mostForks={mostForks.forks}
+        setMostStars={setMostStars}
+        mostStars={mostStars.stars}
       />
       <Dashboard
         libraryName={libraryName}
@@ -32,6 +34,8 @@ export default function App() {
         apiData={apiData}
         mostForksNumber={mostForks.forks}
         mostForksName={mostForks.name}
+        mostStarsNumber={mostStars.stars}
+        mostStarsName={mostStars.name}
       />
     </div>
   )
