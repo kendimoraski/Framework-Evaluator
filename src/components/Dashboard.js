@@ -11,6 +11,8 @@ function Dashboard({
   mostForksName,
   mostStarsNumber,
   mostStarsName,
+  leastIssuesNumber,
+  leastIssuesName,
 }) {
   // const [ascending, setAscending] = useState(false);
   // const [descending, setDescending] = useState(false);
@@ -53,7 +55,6 @@ function Dashboard({
           </table>
         </div>
       </div>
-      {/* Currently this is just defaulting to the first value that's entered in the form */}
       <Card
         title={'Most Forks'}
         name={mostForksName}
@@ -65,7 +66,11 @@ function Dashboard({
         number={mostStarsNumber}
       />
       <div>
-        <Card title={'Least Open Issues'} />
+        <Card
+          title={'Least Open Issues'}
+          name={leastIssuesName}
+          number={leastIssuesNumber}
+        />
       </div>
     </div>
   )

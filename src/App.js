@@ -13,6 +13,7 @@ export default function App() {
   // We set this to -1 because...
   const [mostForks, setMostForks] = useState({ forks: -1 })
   const [mostStars, setMostStars] = useState({ stars: -1 })
+  const [leastIssues, setLeastIssues] = useState({ issues: Infinity })
 
   return (
     <div>
@@ -27,6 +28,8 @@ export default function App() {
         mostForks={mostForks.forks}
         setMostStars={setMostStars}
         mostStars={mostStars.stars}
+        setLeastIssues={setLeastIssues}
+        leastIssues={leastIssues.issues}
       />
       <Dashboard
         libraryName={libraryName}
@@ -36,6 +39,8 @@ export default function App() {
         mostForksName={mostForks.name}
         mostStarsNumber={mostStars.stars}
         mostStarsName={mostStars.name}
+        leastIssuesNumber={leastIssues.issues}
+        leastIssuesName={leastIssues.name}
       />
     </div>
   )

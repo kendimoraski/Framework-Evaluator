@@ -34,6 +34,12 @@ export default function Forms(props) {
             stars: fetchedFramework.stargazers,
           })
         }
+        if (fetchedFramework.openIssues < props.leastIssues) {
+          props.setLeastIssues({
+            name: fetchedFramework.name,
+            issues: fetchedFramework.openIssues,
+          })
+        }
         props.setApiData([...props.apiData, fetchedFramework])
       }
     )
@@ -42,9 +48,9 @@ export default function Forms(props) {
     resetFrameworkName()
   }
 
+  // The following useEffect is only for logging if we want to. It's used because of the state update being asynchronous, props.mostForks isn't updated on first render.
   useEffect(
     () => console.log('this is mostForks', props.mostForks),
-    // What is this for again?
     [props.mostForks]
   )
 
