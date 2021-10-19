@@ -65,13 +65,11 @@ function Dashboard({
         name={mostStarsName}
         number={mostStarsNumber}
       />
-      <div>
-        <Card
-          title={'Least Open Issues'}
-          name={leastIssuesName}
-          number={leastIssuesNumber}
-        />
-      </div>
+      <Card
+        title={'Least Open Issues'}
+        name={leastIssuesName}
+        number={leastIssuesNumber}
+      />
     </div>
   )
 }
